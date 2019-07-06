@@ -56,3 +56,21 @@ Follow the instructions to implment `resting`, `picking up items` and `equipping
 - Implement fighting an enemy. (how you do it is up to you!)
 
 - When an enemy or weapon gets clicked it gets deleted from the page
+
+#Notes
+
+- I did not add image sources. Instead, I gave the img element permanent height and width. 
+
+- I know it is not the right way but I focused more on implementing section 4 features.
+
+## Fighting an enemy
+
+- Choose an enemy to fight with health greater than 0
+
+- Clicking on shoot decrements health of enemy by one point
+
+- When health is 0, enemy is defeated
+
+## Struggles
+
+- My css is not on point and I did not choose appropriate selectors. 

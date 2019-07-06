@@ -1,12 +1,76 @@
 <html>
+
 <head>
-    <meta charset="utf-8">
-    <title>Mocha Tests</title>
-    <link href="lib/mocha.css" rel="stylesheet" />
+  <meta charset="utf-8">
+  <title>Mocha Tests</title>
+  <link href="lib/mocha.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+  <img id="inn" onclick="rest(hero)">
+  <img id="dagger" onclick="pickUpItem(hero, {type: 'dagger', damage: 2})">
+  <img id="bag" onclick="equipWeapon(hero)">
+  <div id="buttonDisplayStats">
+    <button onclick="displayStats()">Display Stats</button>
+    <ul id="stats"></ul>
+  </div>
 
 
+  <ul id="enemies"></ul>
+
+  <form onsubmit="changeName(); return false">
+    <div class="formSection">
+      <h2>Change Name</h2>
+      <div id="block">
+        <label>New name</label>
+        <input type="text" id="name">
+      </div>
+      <button type="submit">Change Name</button>
+    </div>
+  </form>
+
+  <form onsubmit="chooseEnemy(); return false">
+    <div class="formSection" id="fs1">
+      <h2>FIGHTING</h2>
+      <label>Choose Enemy:</label>
+      <select id="selectEnemy">
+      </select>
+    </div>
+    <div class="button" id="button-black">
+      <button type="submit">GO!</button>
+    </div>
+  </form>
+
+  <div id="fight">
+    <label id="enemyChosen"></label>
+    <button id="shoot" onclick="doDamage(hero, selectEnemy.value)"></button>
+  </div>
+
+
+  <form onsubmit="deleteEnemy(); return false">
+    <div class="formSection" id="fs2">
+      <h2>Delete Enemy</h2>
+      <label>Choose Enemy:</label>
+      <select id="selectEnemy2">
+      </select>
+    </div>
+    <div class="button">
+      <button type="submit">Delete</button>
+    </div>
+  </form>
+
+  <form onsubmit="deleteWeapon(); return false">
+    <div class="formSection" id="fs2">
+      <h2>Delete Weapon</h2>
+      <label>Choose Weapon:</label>
+      <select id="selectWeapon">
+      </select>
+    </div>
+    <div class="button">
+      <button type="submit">Delete</button>
+    </div>
+  </form>
   <!-- 👍 YOUR HTML HERE 👍 -->
 
 
@@ -15,7 +79,7 @@
   <button onclick="mocha.checkLeaks(); mocha.run();">Run the tests!</button>
 
   <div id="mocha">
-  <!-- MOCHA TEST FEEDBACK WILL BE RENDERED HERE -->
+    <!-- MOCHA TEST FEEDBACK WILL BE RENDERED HERE -->
   </div>
 
   <script src="lib/chai.js"></script>
@@ -26,4 +90,5 @@
   <script src="lib/game_logic.test.js"></script>
 
 </body>
+
 </html>
